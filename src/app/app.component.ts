@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'prueba';
+  public title: string = "Primera aplicacion en angular";
+  public contador: number =0;
+
+  incrementar(numero:number):void {
+    this.contador+=numero;
+  }
+  resetearContador():void{
+    this.contador=0;
+  }
+   
 }
+

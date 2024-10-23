@@ -1,0 +1,41 @@
+<h1>{{ name }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name }}</dd>
+
+  <td>Edad:</td>
+  <dd>{{ age }}</dd>
+
+  <td>Datos:</td>
+  <dd>{{ getHeroDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{ capitalizedName }}</dd>
+</dl>
+<button
+  *ngIf="name !== 'Spiderman'"
+  class="btn btn-primary mx-2"
+  (click)="changeHero()"
+>
+  Cambiar nombre
+</button>
+
+<button *ngIf="age !== 23" class="btn btn-primary " (click)="changeAge()">
+  Cambiar edad
+</button>
+<button (click)="resetForm()" class="btn btn-primary mx-2">RESET</button>
+<hr>
+<p>Listado de Héroes</p>
+
+<ul class="mt-2 list-group">
+    <li *ngFor="let name of heroes"
+    class="list-group-item"> {{ name }}</li>
+  </ul>
+  <button *ngIf="heroes.length!=0"
+  (click)="borrarUltimo()" class="btn btn-outline-danger">Borrar el ultimo héroe</button>
+  <p>{{estaBorrado()}}</p>
+
+
+
+
